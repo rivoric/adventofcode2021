@@ -90,26 +90,9 @@ class vents ():
             overlaps += sum(overlap(v) for v in row)
         return overlaps
 
-def main (stream: io.IOBase) -> None:
+def main (stream: io.IOBase) -> tuple:
     all_vents = vents()
     all_vents.load_data(stream)
-    print("Number of intersections A",all_vents.number_intersections())
-    print("Number of intersections B",all_vents.number_intersections(all_lines=True))
-
-if __name__ == "__main__":
-    testdata = io.StringIO("""0,9 -> 5,9
-8,0 -> 0,8
-9,4 -> 3,4
-2,2 -> 2,1
-7,0 -> 7,4
-6,4 -> 2,0
-0,9 -> 2,9
-3,4 -> 1,4
-0,0 -> 8,8
-5,5 -> 8,2""")
-    print("Test data")
-    main(testdata)
-
-    print("Live data")
-    with open("input.txt") as ventdata:
-        main(ventdata)
+    partA = all_vents.number_intersections()
+    partB = all_vents.number_intersections(all_lines=True)
+    return (partA, partB)
