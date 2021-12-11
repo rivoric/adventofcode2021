@@ -1,0 +1,1 @@
+What is the plural of octopus? https://www.merriam-webster.com/words-at-play/the-many-plurals-of-octopus-octopi-octopuses-octopodes
